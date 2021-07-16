@@ -10,7 +10,7 @@ cd $REPO || exit
 
 git add .
 git commit -m "Add pitest report ($foldername)"
-printf '%s\n%s\n' "$ORG" "$GITHUB_TOKEN"
+printf '%s\n%s\n' "deploy@travis-ci.org" "$GITHUB_TOKEN"
 
-printf '%s\n%s\n' "$ORG" "$GITHUB_TOKEN" | ../push.sh
+printf '%s\n%s\n' "deploy@travis-ci.org" "$GITHUB_TOKEN" | ../push.sh
 # TODO index html
