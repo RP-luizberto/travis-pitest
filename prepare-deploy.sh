@@ -8,7 +8,7 @@ mv $REPO deploy_folder
 
 echo "Execution=$foldername"
 cp -r target/pit-reports/* deploy_folder
-rm -r deploy_folder/.git
+rm -rf deploy_folder/.git
 
 echo "Removed git folder"
 ls -la deploy_folder
