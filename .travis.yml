@@ -1,6 +1,6 @@
 language: java
 script: ./pitest.sh
-after_script: ./prepare-deploy.sh
+before_deploy: ./prepare-deploy.sh
 deploy:
   provider: pages
   repo: RP-luizberto/RP-luizberto.github.io
