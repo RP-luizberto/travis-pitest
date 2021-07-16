@@ -1,13 +1,13 @@
 language: java
 script: ./pitest.sh
-after_script: ./deploy.sh
-#deploy:
-#  provider: pages
-#  repo: RP-luizberto/RP-luizberto.github.io
-#  target_branch: main
-#  local_dir: target/pit-reports/
-#  skip_cleanup: true
-#  github_token: $GITHUB_TOKEN
-#  keep_history: true
-#  on:
-#    branch: master
+after_script: ./prepare-deploy.sh
+deploy:
+  provider: pages
+  repo: RP-luizberto/RP-luizberto.github.io
+  target_branch: main
+  local_dir: deploy_folder/
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN
+  keep_history: true
+  on:
+    branch: master
