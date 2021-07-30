@@ -28,3 +28,14 @@ jobs:
         pr_body: "PR automatically created based on [#${{ github.event.pull_request.number }}](${{ github.event.pull_request.html_url }})"
         pr_label: "enhancement"
         github_token: ${{ secrets.GITHUB_TOKEN }}
+    - uses: actions/checkout@v2
+    - name: Open PR to dev branch
+      uses: repo-sync/pull-request@v2
+      if: ${{ github.event.pull_request.user.login == 'RP-luizberto' }}
+      with:
+        source_branch: ${{ github.event.pull_request.head.ref }}
+        destination_branch: "dev"
+        pr_title: "[DEV] ${{ github.event.pull_request.title }}"
+        pr_body: "PR automatically created based on [#${{ github.event.pull_request.number }}](${{ github.event.pull_request.html_url }})"
+        pr_label: "enhancement"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
