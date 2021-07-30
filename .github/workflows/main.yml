@@ -22,6 +22,6 @@ jobs:
       uses: repo-sync/pull-request@v2
       if: ${{ github.event.pull_request.user.login == 'RP-luizberto' }}
       with:
-        source_branch: ${{ github.event.pull_request.base.ref }}
+        source_branch: ${{ github.event.pull_request.head.ref }}
         destination_branch: "staging"
         github_token: ${{ secrets.GITHUB_TOKEN }}
