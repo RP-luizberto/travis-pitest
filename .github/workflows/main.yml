@@ -19,4 +19,5 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: View PR author
+      if: github.event.pull_request.user.login == "RP-luizberto"
       run: echo "This PR is opened by ${{ github.event.pull_request.user.login }} ."
