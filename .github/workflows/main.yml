@@ -24,4 +24,7 @@ jobs:
       with:
         source_branch: ${{ github.event.pull_request.head.ref }}
         destination_branch: "staging"
+        pr_title: "[STAGING] ${{ github.event.pull_request.title }}"
+        pr_body: "PR automatically created based on [#${{ github.event.pull_request.number }}](${{ github.event.pull_request.html_url }})"
+        pr_label: "enhancement"
         github_token: ${{ secrets.GITHUB_TOKEN }}
